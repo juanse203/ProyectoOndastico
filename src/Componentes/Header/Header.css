@@ -1,0 +1,11 @@
+.Headerpendejos {
+    border-radius: 1.375rem;
+    border: 4px solid #d1d5db;
+}
+
+.logo-bton {
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+    margin: 1rem;
+}

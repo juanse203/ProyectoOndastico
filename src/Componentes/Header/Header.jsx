@@ -17,7 +17,7 @@ const Header = () => {
                 alt="Abrir menú"
                 onClick={() => setDrawerOpen(true)}
             />
-
+            
             {/* Componente del Drawer */}
             <CoordiNav open={drawerOpen} onClose={() => setDrawerOpen(false)} />
         </div>

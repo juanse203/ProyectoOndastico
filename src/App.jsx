@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
+import Protegida from './Contexto/ConCondon'
 
 import LoginPage from './Pages/LoginPage/LoginPage'
 import HomePage from './Pages/HomePage/HomePage'
@@ -23,29 +24,27 @@ const App = () => {
 
   return (
     <div>
-      <BrowserRouter>
       <Routes>
         {/* Login, el home y el perfil... obvio */}
         <Route path="/" element={<LoginPage />} />
-        <Route path="/Home" element={<HomePage />} />
-        <Route path='/Perfil' element={<PerfilPage />}/>
+        <Route path="/Home" element={<Protegida><HomePage /></Protegida>} />
+        <Route path='/Perfil' element={<Protegida><PerfilPage /></Protegida>}/>
 
         {/* Gestion de usuarios */}
-        <Route path='/Usuarios' element={<Gusuarios />}/>
-        <Route path='/añadirUs' element={<AddUsuario />}/>
-        <Route path='/deletesUsers' element={<DeleteUser/>}/>
+        <Route path='/Usuarios' element={<Protegida><Gusuarios /></Protegida>}/>
+        <Route path='/añadirUs' element={<Protegida><AddUsuario /></Protegida>}/>
+        <Route path='/deletesUsers' element={<Protegida><DeleteUser/></Protegida>}/>
 
         {/* Gestion de proyectos */}
-        <Route path='/Proyectos' element={<Gproyectos />}/>
-        <Route path='/añadirProjects' element={<Addprojecto/>}/>
-        <Route path='/DetallesProject' element={<DetallesProject/>}/>
-        <Route path='/AvancesProject' element={<AvancesProject/>}/>
-        <Route path='/Reportes' element={<Reportes />}/>
+        <Route path='/Proyectos' element={<Protegida><Gproyectos /></Protegida>}/>
+        <Route path='/añadirProjects' element={<Protegida><Addprojecto/></Protegida>}/>
+        <Route path='/DetallesProject' element={<Protegida><DetallesProject/></Protegida>}/>
+        <Route path='/AvancesProject' element={<Protegida><AvancesProject/></Protegida>}/>
+        <Route path='/Reportes' element={<Protegida><Reportes /></Protegida>}/>
 
-        {/* Pos la pagina de error, que mas va a ser */}
-        <Route path='/*' element={<ErrorPage/>}/>
+        {/* Pos la pagina de error, que mas va a ser XD */}
+        <Route path='/*' element={<Protegida><ErrorPage/></Protegida>}/>
       </Routes>
-    </BrowserRouter>
     </div>
   )
 }

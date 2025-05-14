@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
-import { signOut } from 'firebase/auth';
-import { auth } from '../../../Firebase/Firebase'
+import React from 'react'
+import { useNavigate } from "react-router-dom"
+import { useAuth } from '../../../Contexto/TelaComeSinPretexto'
 
 import Drawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
@@ -15,11 +14,7 @@ import MailIcon from '@mui/icons-material/Mail';
 
 const ProfNavbar = ({ open, onClose }) => {// Recibe 'open' y 'onClose' como props
   const navigate = useNavigate();
-
-  const handleLogout = async () => {
-    await signOut(auth);
-    navigate('/');
-  };
+  const { logout } = useAuth();
 
   const navItems = [
     { text: 'Home', path: '/Home' },
@@ -37,7 +32,7 @@ const ProfNavbar = ({ open, onClose }) => {// Recibe 'open' y 'onClose' como pro
             <ListItem key={text} disablePadding>
               <ListItemButton onClick={() => {
                 if (path === 'logout') {
-                  handleLogout();
+                  logout();
                 } else {
                   navigate(path);
                 }

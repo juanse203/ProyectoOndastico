@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import './Header.css'
+import { useAuth } from '../../Contexto/TelaComeSinPretexto'
 
 import logOndas from '../../assets/logOndas.png'
 import CoordiNav from '../../Componentes/Navbars/CoordinNavbar/CordiNavbar'
@@ -8,6 +9,7 @@ import studenNav from '../../Componentes/Navbars/StudentNavbar/StudenNavbar'
 
 const Header = () => {
     const [drawerOpen, setDrawerOpen] = useState(false)
+    const { userData } = useAuth();
 
     return (
         <div className='Headerpendejos'>
@@ -17,6 +19,7 @@ const Header = () => {
                 alt="Abrir menú"
                 onClick={() => setDrawerOpen(true)}
             />
+            <div className='name-usuario'>{userData?.nombre} {userData?.apellido}</div>
             
             {/* Componente del Drawer */}
             <CoordiNav open={drawerOpen} onClose={() => setDrawerOpen(false)} />

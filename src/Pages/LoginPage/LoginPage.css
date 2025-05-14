@@ -32,7 +32,7 @@
 
 .login-form-container {
   width: 50%;
-  height: 76%;
+  height: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,7 +43,12 @@
 .login-form-box {
   width: 100%;
   max-width: 400px;
-  background-color: #f6f6fa;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  box-shadow: 24px 24px 24px 24px rgba(0, 0, 0, 0.05);
+  font-family: 'Inter', sans-serif;
 }
 
 .login-title {
@@ -66,23 +71,22 @@
   font-size: 0.875rem;
   font-weight: 900;
   color: #1f2937;
+  margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
 .login-input {
-  width: 85%;
+  width: 90%;
   border-radius: 0.375rem;
   border: 1px solid #d1d5db;
-  padding: 0.5rem 1.5rem 0.5rem;
-  color: #111827;
+  padding: 0.75rem 1rem;
   font-size: 1rem;
-  outline: none;
-  box-shadow: 0 0 0 1px transparent;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .login-input:focus {
-  border-color: #4f46e5;
-  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.5);
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
 }
 
 .login-options {
@@ -108,14 +112,14 @@
 }
 
 .login-button {
-  display: inline-block;
+  display: block;         
   width: 95%;
+  margin-top: 1.5rem;          
   background-color: #000000;
   color: #ffffff;
   font-weight: 600;
   border-radius: 0.375rem;
   padding: 0.625rem;
-  text-align: center;
   text-decoration: none;
   font-size: 1rem;
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -124,15 +128,20 @@
 }
 
 .login-button:hover {
-  background-color: #1f1f1f;
+  background-color: #1f2937;
+  transform: translateY(-1px);
+}
+
+.login-button:active {
+  transform: scale(0.98);
 }
 
 .login-footer {
   background-color: #059394;
   color: white;
-  text-align: center;
-  font-size: 0.875rem;
+  font-size: 1.0rem;
   padding: 1rem;
+  border-top: 1px solid #ddd;
 }
 
 @media (min-width: 768px) {

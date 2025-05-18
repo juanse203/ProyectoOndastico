@@ -38,7 +38,7 @@ const App = () => {
         {/* Gestion de proyectos */}
         <Route path='/Proyectos' element={<Protegida><Gproyectos /></Protegida>}/>
         <Route path='/añadirProjects' element={<Protegida><Addprojecto/></Protegida>}/>
-        <Route path='/DetallesProject' element={<Protegida><DetallesProject/></Protegida>}/>
+        <Route path='/proyecto/:id' element={<Protegida><DetallesProject/></Protegida>}/>
         <Route path='/AvancesProject' element={<Protegida><AvancesProject/></Protegida>}/>
         <Route path='/Reportes' element={<Protegida><Reportes /></Protegida>}/>
 

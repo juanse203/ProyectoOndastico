@@ -19,7 +19,7 @@ const ProfNavbar = ({ open, onClose }) => {// Recibe 'open' y 'onClose' como pro
   const navItems = [
     { text: 'Home', path: '/Home' },
     { text: 'Perfil', path: '/Perfil' },
-    { text: 'Gestión de usuarios', path: '/Usuarios' },
+    { text: 'Gestión de estudiantes', path: '/Usuarios' },
     { text: 'Proyectos', path: '/Proyectos' },
     { text: 'Cerrar sesión', path: 'logout' }, // redireccionar al login
   ];

@@ -29,6 +29,7 @@ const LoginPage = () => {
           <div className="login-form-box">
             <h2 className="login-title">Bienvenido a Ondas</h2>
             <p className="login-subtitle">¡Bienvenido! Por favor, introduzca sus datos.</p>
+            
             <form className="login-form" onSubmit={handleSubmit}>
               <label htmlFor="email" className="login-label">Correo</label>
               <input id="email" type="email" required className="login-input" onChange={(xd) => setEmail(xd.target.value)} />
